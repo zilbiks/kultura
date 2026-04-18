@@ -1,0 +1,55 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Starry Night — Browser Animation Study</title>
+  <link rel="stylesheet" href="styles.css" />
+</head>
+<body>
+  <main class="app">
+    <section class="panel">
+      <h1>Starry Night — Web Animation</h1>
+      <p>
+        Load a high-resolution image of <em>The Starry Night</em> and apply subtle looped animation
+        (swirling sky, star pulsing, moon glow, cypress sway, village light flicker).
+      </p>
+
+      <label class="field">
+        <span>Image source</span>
+        <input id="imageUrl" type="url" value="https://upload.wikimedia.org/wikipedia/commons/e/ea/The_Starry_Night.jpg" />
+      </label>
+
+      <div class="actions">
+        <button id="loadBtn">Load Image</button>
+        <label class="upload-btn">
+          Upload Local Image
+          <input id="uploadInput" type="file" accept="image/*" hidden />
+        </label>
+      </div>
+
+      <label class="field">
+        <span>Animation intensity</span>
+        <input id="intensity" type="range" min="0" max="1" step="0.01" value="0.45" />
+      </label>
+
+      <label class="field">
+        <span>Loop duration (seconds)</span>
+        <input id="loopDuration" type="number" min="4" max="16" step="1" value="8" />
+      </label>
+
+      <div class="actions">
+        <button id="toggleBtn">Pause</button>
+      </div>
+
+      <p class="hint">Tip: run in fullscreen for cinematic playback.</p>
+    </section>
+
+    <section class="viewer">
+      <canvas id="canvas" width="1280" height="1024" aria-label="Animated Starry Night canvas"></canvas>
+    </section>
+  </main>
+
+  <script src="app.js"></script>
+</body>
+</html>
