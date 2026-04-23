@@ -3,53 +3,41 @@
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>Starry Night — Browser Animation Study</title>
+  <title>Starry Night Pixel Animation (p5.js)</title>
   <link rel="stylesheet" href="styles.css" />
+  <style>
+    body {
+      margin: 0;
+      min-height: 100vh;
+      display: grid;
+      place-items: center;
+      background: #0b1020;
+      color: #d9def1;
+      font-family: Inter, system-ui, sans-serif;
+    }
+
+    main {
+      display: grid;
+      gap: 0.75rem;
+      justify-items: center;
+      padding: 1rem;
+    }
+
+    canvas {
+      border: 1px solid rgba(255, 255, 255, 0.2);
+      box-shadow: 0 20px 50px rgba(0, 0, 0, 0.45);
+      max-width: 96vw;
+      height: auto;
+    }
+  </style>
 </head>
 <body>
-  <main class="app">
-    <section class="panel">
-      <h1>Starry Night — Web Animation</h1>
-      <p>
-        Load a high-resolution image of <em>The Starry Night</em> and apply subtle looped animation
-        (swirling sky, star pulsing, moon glow, cypress sway, village light flicker).
-      </p>
-
-      <label class="field">
-        <span>Image source</span>
-        <input id="imageUrl" type="url" value="https://upload.wikimedia.org/wikipedia/commons/e/ea/The_Starry_Night.jpg" />
-      </label>
-
-      <div class="actions">
-        <button id="loadBtn">Load Image</button>
-        <label class="upload-btn">
-          Upload Local Image
-          <input id="uploadInput" type="file" accept="image/*" hidden />
-        </label>
-      </div>
-
-      <label class="field">
-        <span>Animation intensity</span>
-        <input id="intensity" type="range" min="0" max="1" step="0.01" value="0.45" />
-      </label>
-
-      <label class="field">
-        <span>Loop duration (seconds)</span>
-        <input id="loopDuration" type="number" min="4" max="16" step="1" value="8" />
-      </label>
-
-      <div class="actions">
-        <button id="toggleBtn">Pause</button>
-      </div>
-
-      <p class="hint">Tip: run in fullscreen for cinematic playback.</p>
-    </section>
-
-    <section class="viewer">
-      <canvas id="canvas" width="1280" height="1024" aria-label="Animated Starry Night canvas"></canvas>
-    </section>
+  <main>
+    <h1>Vincent van Gogh — The Starry Night (Animated Pixels)</h1>
+    <p>Base image + subtle vortex flow field + star pulsing. No particles, no random.</p>
   </main>
 
+  <script src="https://cdn.jsdelivr.net/npm/p5@1.9.4/lib/p5.min.js"></script>
   <script src="app.js"></script>
 </body>
 </html>
